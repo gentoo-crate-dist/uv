@@ -2,6 +2,8 @@ name: Sync with upstream
 on:
   schedule:
     - cron: "4 */8 * * *"
+  push:
+  workflow_dispatch:
 
 jobs:
   sync-mirror:
