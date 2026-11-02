@@ -1,7 +1,7 @@
 name: Sync with upstream
 on:
   schedule:
-    - cron: "4 * * * *"
+    - cron: "4 */8 * * *"
 
 jobs:
   sync-mirror:
@@ -10,7 +10,7 @@ jobs:
       contents: write
     steps:
       - name: Update mirror
-        uses: projg2/crate-dist-mirror-action@v1
+        uses: projg2/crate-dist-mirror-action@v2
         with:
           ssh-private-key: ${{ secrets.ssh_key }}
           directories: crates/*/
